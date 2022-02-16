@@ -1,3 +1,51 @@
+var transl = {
+    en: /* DEFALT LENGUAGE IN CASE OF UNDEFINED TRANSLATIONS */ {
+        tableTitle: '<span class="biggerF">C</span>OUNTDOWN FOR<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
+        days: 'Days',
+        hours: 'Hours',
+        mins: 'Minutes',
+        secs: 'Seconds'
+    },
+    pt: {
+        tableTitle: '<span class="biggerF">L</span>ANÇAMENTO DO<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
+        days: 'Dias',
+        hours: 'Horas',
+        mins: 'Minutes',
+        secs: 'Seconds'
+    }
+};
+
+var getTransl = (text) => {
+    var userLanguage = navigator.language || navigator.userLanguage;
+
+    var selectedLeng = typeof transl[userLanguage.substr(0,2)] == "undefined"? transl["en"]:
+                    typeof leng == "string"? transl[leng]:
+                    transl[userLanguage.substr(0,2)];
+
+    var textObj = text.replace(/\./g," ").split(" ");
+
+    var returnTranslation;
+    var fixedReturnTranslation;
+    textObj.forEach((e)=>{
+        returnTranslation = (returnTranslation==undefined?selectedLeng:returnTranslation)[e];
+        fixedReturnTranslation = (fixedReturnTranslation==undefined?transl["en"]:fixedReturnTranslation)[e];
+    });
+
+    return returnTranslation == undefined? fixedReturnTranslation: returnTranslation;
+}
+
+window.addEventListener("load", () => {
+    document.getElementsByClassName("invisibleInPhone")[0].innerHTML = getTransl("tableTitle");
+    
+    document.getElementById("Days2").innerHTML = getTransl("days");
+    document.getElementById("Hours2").innerHTML = getTransl("hours");
+    document.getElementById("Minutes2").innerHTML = getTransl("mins");
+    document.getElementById("Seconds2").innerHTML = getTransl("secs");
+});
+  
+  
+
+
 var removeIfZero = (n, id) => {
     if(n < 0) {
         if(id == "Days"){
