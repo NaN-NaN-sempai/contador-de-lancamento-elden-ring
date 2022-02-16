@@ -85,7 +85,7 @@ var removeIfZero = (n, id) => {
 }
 var title = "";
 
-const ELDEN_RELEASE = new Date(2022, 1, 25)
+const ELDEN_RELEASE = new Date(2022, 1, 24, 23)
 function CountDown(){
     
     var d = new Date();
