@@ -46,7 +46,7 @@ function CountDown(){
 
     var getNTxt = (n, s) =>(n?n+s: "")
 
-    document.title = (remainingSeconds < 0? "": " (" + getNTxt(remainingDays, "d") + " " + getNTxt(remainingHours, "h") + " " + getNTxt(remainingMinutes, "m") + " " + getNTxt(remainingSeconds, "s") + ") ") + "Elden Ring Lançamento";
+    document.title = (remainingSeconds < 0? "": " (" + getNTxt(remainingDays, "d") + " " + getNTxt(remainingHours, "h") + " " + getNTxt(remainingMinutes, "m") + " " + getNTxt(remainingSeconds, "s") + ") ") + "Elden Ring Contagem Regrassiva";
     
     setTimeout(CountDown, 1000)
 }
