@@ -4,14 +4,16 @@ var transl = {
         days: 'Days',
         hours: 'Hours',
         mins: 'Minutes',
-        secs: 'Seconds'
+        secs: 'Seconds',
+        countdown: "Elden Ring Countdown"
     },
     pt: {
         tableTitle: '<span class="biggerF">L</span>ANÇAMENTO DO<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
         days: 'Dias',
         hours: 'Horas',
         mins: 'Minutes',
-        secs: 'Seconds'
+        secs: 'Seconds',
+        countdown: "Elden Ring Contagem Regrassiva"
     }
 };
 
@@ -109,7 +111,7 @@ function CountDown(){
 
     var getNTxt = (n, s) =>(n?n+s: "")
 
-    document.title = (remainingSeconds < 0? "": " (" + getNTxt(remainingDays, "d") + " " + getNTxt(remainingHours, "h") + " " + getNTxt(remainingMinutes, "m") + " " + getNTxt(remainingSeconds, "s") + ") ") + "Elden Ring Contagem Regrassiva";
+    document.title = (remainingSeconds < 0? "": " (" + getNTxt(remainingDays, "d") + " " + getNTxt(remainingHours, "h") + " " + getNTxt(remainingMinutes, "m") + " " + getNTxt(remainingSeconds, "s") + ") ") + getTransl("countdown");
     
     setTimeout(CountDown, 1000)
 }
