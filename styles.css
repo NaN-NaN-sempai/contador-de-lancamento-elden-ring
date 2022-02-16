@@ -4,12 +4,16 @@
     --txts: 0 0 5px var(--txtsc), 0 0 5px var(--txtsc);
 }
 
+* {
+    transition: .5s;
+}
 body {
     background: url("./wallpaper.jpg") no-repeat center center fixed, #060d06; 
     min-height: 100%;
     min-width: 100%;
     overflow: hidden;  
     background-size: cover;
+    user-select: none;
 }
 
 .CountDownContainer {
@@ -21,6 +25,10 @@ body {
     text-align: center;
     /* background-color: #1c130c; */
     padding: 10px;
+}
+
+.biggerF {
+    font-size: 5rem;
 }
 
 .Timer {
@@ -63,12 +71,11 @@ body {
     font-size: 15px; 
     text-decoration: none;
     box-shadow: var(--txts);
-    transition: .2s;
 }
 .nanGit:hover {
     opacity: .8;
 }
-.nanGit span, .nanScripts span {
+.nanGit span{
     color: var(--maincolor);
     cursor: pointer; 
     font-size: 13px;
@@ -97,6 +104,9 @@ body {
         top: 70%;
     }
 
+    .biggerF {
+        font-size: 3rem;
+    }
     .Timer {
         color: black;
         font-size: 2rem;

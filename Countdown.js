@@ -12,10 +12,25 @@ var removeIfZero = (n, id) => {
     } else if(n) {
         document.getElementById(id).textContent = n
 
-        document.getElementById(id).style.display = document.getElementById(id+"2").style.display = ""
+        document.getElementById(id).style.display = document.getElementById(id+"2").style.display = "";
+        document.getElementById(id).style.opacity = document.getElementById(id+"2").style.opacity = 1;
+
+        setTimeout(() => {
+            if(window.innerWidth < 897) {
+                document.getElementById(id).style.fontSize = "2rem";
+                document.getElementById(id+"2").style.fontSize = "1rem";
+            } else {
+                document.getElementById(id).style.fontSize = "4.2rem";
+                document.getElementById(id+"2").style.fontSize = "2rem";
+            }
+        }, 100);
 
     } else {
-        document.getElementById(id).style.display = document.getElementById(id+"2").style.display = "none"
+        document.getElementById(id).style.opacity = document.getElementById(id+"2").style.opacity = 0;
+        document.getElementById(id).style.fontSize = document.getElementById(id+"2").style.fontSize = "0rem";
+        setTimeout(() => {
+            document.getElementById(id).style.display = document.getElementById(id+"2").style.display = "none";
+        }, 501);
     }
 }
 var title = "";

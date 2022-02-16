@@ -165,8 +165,8 @@ var pJS = function(tag_id, params){
         pJS.tmp.retina = false;
       }
   
-      pJS.canvas.w = window.screen.width * pJS.canvas.pxratio;
-      pJS.canvas.h = window.screen.height * pJS.canvas.pxratio;
+      pJS.canvas.w = window.innerWidth * pJS.canvas.pxratio;
+      pJS.canvas.h = window.innerHeight * pJS.canvas.pxratio;
   
       pJS.particles.size.value = pJS.tmp.obj.size_value * pJS.canvas.pxratio;
       pJS.particles.size.anim.speed = pJS.tmp.obj.size_anim_speed * pJS.canvas.pxratio;
@@ -197,8 +197,8 @@ var pJS = function(tag_id, params){
   
         window.addEventListener('resize', function(){
   
-            pJS.canvas.w = window.screen.width;
-            pJS.canvas.h = window.screen.height;
+            pJS.canvas.w = window.innerWidth;
+            pJS.canvas.h = window.innerHeight;
             
   
             /* resize canvas */
