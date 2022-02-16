@@ -88,9 +88,10 @@ var title = "";
 const ELDEN_RELEASE = new Date(2022, 1, 25)
 function CountDown(){
     
-    var currentDate = new Date()
+    var d = new Date();
+    var nd = new Date(d.getTime() + (d.getTimezoneOffset() * 60000) + (3600000 * -6));
     
-    var currentTime = currentDate.getTime()
+    var currentTime = nd.getTime()
     var releaseTime = ELDEN_RELEASE.getTime()
     
     var remainingTime = releaseTime - currentTime
