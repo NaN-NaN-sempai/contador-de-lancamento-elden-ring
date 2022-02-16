@@ -1,0 +1,111 @@
+:root {
+    --maincolor: #fbeba3;
+    --txtsc: #e8b152;
+    --txts: 0 0 5px var(--txtsc), 0 0 5px var(--txtsc);
+}
+
+body {
+    background: url("https://cdn.wccftech.com/wp-content/uploads/2021/06/ER_KEY-ART-scaled-e1623411764381-2060x1059.jpg") no-repeat center center fixed, #060d06; 
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;  
+    background-size: cover;
+}
+
+.CountDownContainer {
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    border-radius: 5px;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    /* background-color: #1c130c; */
+    padding: 10px;
+}
+
+.Timer {
+    font-size: 4.2rem;
+    color: var(--maincolor);
+    text-shadow: var(--txts);
+}
+.invisibleInPhone {
+    opacity: 0;
+}
+
+
+
+.Type {
+    font-size: 2rem;
+    color: var(--maincolor);
+    text-shadow: var(--txts);
+}
+
+#Particle-div {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+
+
+.nanGit {
+    text-align: center;
+    position: fixed;
+    opacity: .8;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 10px;
+    padding: 3px;
+    border-radius: 15px;
+    cursor: pointer; 
+    font-family: Arial;
+    font-size: 15px; 
+    text-decoration: none;
+    box-shadow: var(--txts);
+    transition: .2s;
+}
+.nanGit span, .nanScripts span {
+    color: var(--maincolor);
+    cursor: pointer; 
+    font-size: 13px;
+    font-weight: normal;
+}
+
+
+@media only screen and (max-width: 897px) {
+    
+    .nanGit {
+        opacity: 1;
+        background: #0a2625;
+    }
+
+    body {
+        background: url("https://cdn.wccftech.com/wp-content/uploads/2021/06/ER_KEY-ART-scaled-e1623411764381-2060x1059.jpg") no-repeat 0 0 fixed, #060d06; 
+        background-size: 190%;
+        background-position: center 0;
+    }
+
+    .invisibleInPhone {
+        opacity: 1;
+    }
+
+    .CountDownContainer {
+        top: 70%;
+    }
+
+    .Timer {
+        color: black;
+        font-size: 2rem;
+    }
+
+    .Type {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Timer {
+        color: var(--maincolor);
+    }
+}
