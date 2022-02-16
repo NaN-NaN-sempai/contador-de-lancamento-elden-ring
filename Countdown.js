@@ -17,9 +17,9 @@ var transl = {
     }
 };
 
-var paramLeng = document.location.href.replace(document.location.origin+document.location.pathname+"#", "").slice(0,2);
 
 var getTransl = (text) => {
+    var paramLeng = document.location.href.split("#")[1];
     var userLanguage = (!transl[paramLeng]? undefined: paramLeng) || navigator.language || navigator.userLanguage;
 
     var selectedLeng = typeof transl[userLanguage.substr(0,2)] == "undefined"? transl["en"]:
