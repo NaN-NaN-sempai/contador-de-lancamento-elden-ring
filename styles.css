@@ -52,7 +52,7 @@ body {
 .nanGit {
     text-align: center;
     position: fixed;
-    opacity: .8;
+    opacity: 0;
     right: 50%;
     transform: translateX(50%);
     bottom: 10px;
@@ -64,6 +64,9 @@ body {
     text-decoration: none;
     box-shadow: var(--txts);
     transition: .2s;
+}
+.nanGit:hover {
+    opacity: .8;
 }
 .nanGit span, .nanScripts span {
     color: var(--maincolor);
