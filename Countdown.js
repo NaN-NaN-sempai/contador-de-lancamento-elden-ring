@@ -11,8 +11,8 @@ var transl = {
         tableTitle: '<span class="biggerF">L</span>ANÇAMENTO DO<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
         days: 'Dias',
         hours: 'Horas',
-        mins: 'Minutes',
-        secs: 'Seconds',
+        mins: 'Minutos',
+        secs: 'Segundos',
         countdown: "Elden Ring Contagem Regrassiva"
     }
 };
