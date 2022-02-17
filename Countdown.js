@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
 });
   
   
-
+var lastN = {}
 
 var removeIfZero = (n, id) => {
     if(n < 0) {
@@ -66,7 +66,16 @@ var removeIfZero = (n, id) => {
         document.getElementById(id).style.display = document.getElementById(id+"2").style.display = "";
         document.getElementById(id).style.opacity = document.getElementById(id+"2").style.opacity = 1;
 
+        if(lastN[id] != n && lastN[id]){   
+            document.getElementById(id).className = "jumpAnim";
+            setTimeout(() => {
+                document.getElementById(id).className = "";
+            }, 950)
+        }
+        lastN[id] = n;
+
         setTimeout(() => {
+
             if(window.innerWidth < 897) {
                 document.getElementById(id).style.fontSize = "2rem";
                 document.getElementById(id+"2").style.fontSize = "1rem";

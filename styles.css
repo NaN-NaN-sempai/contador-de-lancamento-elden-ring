@@ -55,6 +55,32 @@ body {
     bottom: 0;
 }
 
+.jumpAnim {
+    position: relative;
+    top: 0px;
+    animation: jump .55s;
+}
+
+@keyframes jump {
+    0%   {
+        top: 0;
+        filter: blur(10px);
+    }
+    5%  {
+        top: -.2rem;
+    }
+    50%  {
+        top: .7rem;
+        filter: blur(5px);
+    }
+    80% {
+        top: 0;
+        filter: blur(0);
+    }
+    100% {
+        top: 0;
+    }
+  }
 
 
 .nanGit {
