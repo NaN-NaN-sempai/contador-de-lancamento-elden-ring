@@ -1,3 +1,5 @@
+var countOnLocal = true;
+
 var transl = {
     en: /* DEFALT LENGUAGE IN CASE OF UNDEFINED TRANSLATIONS */ {
         tableTitle: '<span class="biggerF">C</span>OUNTDOWN FOR<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
@@ -95,13 +97,16 @@ var removeIfZero = (n, id) => {
 }
 var title = "";
 
-const ELDEN_RELEASE = new Date(2022, 1, 24, 23)
+
+const ELDEN_RELEASE = countOnLocal?
+                        new Date(2022, 1, 25):
+                        new Date(2022, 1, 24, 23);
 function CountDown(){
     
     var d = new Date();
     var nd = new Date(d.getTime() + (d.getTimezoneOffset() * 60000) + (3600000 * -6));
     
-    var currentTime = nd.getTime()
+    var currentTime = (countOnLocal? d: nd).getTime();
     var releaseTime = ELDEN_RELEASE.getTime()
     
     var remainingTime = releaseTime - currentTime
