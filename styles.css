@@ -80,30 +80,37 @@ body {
     100% {
         top: 0;
     }
-  }
+}
 
+.boxContainer {
+    position: fixed;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: var(--txts);
+    font-family: Arial;
+    font-size: 15px; 
+    color: var(--maincolor);
+}
+.boxContainer:hover {
+    opacity: .8;
+}
+
+.launchDate {
+    top: 25%;
+    left: 2%;
+}
 
 .nanGit {
     text-align: center;
-    position: fixed;
-    opacity: 0;
     right: 50%;
     transform: translateX(50%);
     bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
     cursor: pointer; 
-    font-family: Arial;
-    font-size: 15px; 
     text-decoration: none;
-    box-shadow: var(--txts);
-}
-.nanGit:hover {
-    opacity: .8;
+    cursor: pointer; 
 }
 .nanGit span{
-    color: var(--maincolor);
-    cursor: pointer; 
     font-size: 13px;
     font-weight: normal;
 }

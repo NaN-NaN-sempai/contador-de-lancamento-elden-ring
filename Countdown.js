@@ -1,5 +1,9 @@
 var countOnLocal = true;
 
+const ELDEN_RELEASE = countOnLocal?
+                        new Date(2022, 1, 25):
+                        new Date(2022, 1, 24, 23);
+
 var transl = {
     en: /* DEFALT LENGUAGE IN CASE OF UNDEFINED TRANSLATIONS */ {
         tableTitle: '<span class="biggerF">C</span>OUNTDOWN FOR<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
@@ -7,7 +11,8 @@ var transl = {
         hours: 'Hours',
         mins: 'Minutes',
         secs: 'Seconds',
-        countdown: "Elden Ring Countdown"
+        countdown: "Elden Ring Countdown",
+        launchDate: `Release date:<br><br>${ELDEN_RELEASE.toLocaleDateString()} at ${("0"+ELDEN_RELEASE.getHours()).slice(-2)}:${("0"+ELDEN_RELEASE.getMinutes()).slice(-2)}<br><br>In your local time.`
     },
     pt: {
         tableTitle: '<span class="biggerF">L</span>ANÇAMENTO DO<br><span class="biggerF">E</span>LDEN <span class="biggerF">R</span>ING',
@@ -15,7 +20,8 @@ var transl = {
         hours: 'Horas',
         mins: 'Minutos',
         secs: 'Segundos',
-        countdown: "Elden Ring Contagem Regrassiva"
+        countdown: "Elden Ring Contagem Regrassiva",
+        launchDate: `Data de lançamento:<br><br>${ELDEN_RELEASE.toLocaleDateString()} às ${("0"+ELDEN_RELEASE.getHours()).slice(-2)}:${("0"+ELDEN_RELEASE.getMinutes()).slice(-2)}<br><br>No seu horário local.`
     }
 };
 
@@ -46,6 +52,8 @@ window.addEventListener("load", () => {
     document.getElementById("Hours2").innerHTML = getTransl("hours");
     document.getElementById("Minutes2").innerHTML = getTransl("mins");
     document.getElementById("Seconds2").innerHTML = getTransl("secs");
+
+    document.getElementsByClassName("launchDate")[0].innerHTML = getTransl("launchDate")
 });
   
   
@@ -97,10 +105,6 @@ var removeIfZero = (n, id) => {
 }
 var title = "";
 
-
-const ELDEN_RELEASE = countOnLocal?
-                        new Date(2022, 1, 25):
-                        new Date(2022, 1, 24, 23);
 function CountDown(){
     
     var d = new Date();
