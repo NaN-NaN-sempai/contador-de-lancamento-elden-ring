@@ -12,6 +12,7 @@ var transl = {
         mins: 'Minutes',
         secs: 'Seconds',
         countdown: "Elden Ring Countdown",
+        launched: "Launched!",
         launchDate: `Release date:<br><br>${ELDEN_RELEASE.toLocaleDateString()} at ${("0"+ELDEN_RELEASE.getHours()).slice(-2)}:${("0"+ELDEN_RELEASE.getMinutes()).slice(-2)}<br><br>In your local time.`
     },
     pt: {
@@ -21,6 +22,7 @@ var transl = {
         mins: 'Minutos',
         secs: 'Segundos',
         countdown: "Elden Ring Contagem Regrassiva",
+        launched: "Lançado!",
         launchDate: `Data de lançamento:<br><br>${ELDEN_RELEASE.toLocaleDateString()} às ${("0"+ELDEN_RELEASE.getHours()).slice(-2)}:${("0"+ELDEN_RELEASE.getMinutes()).slice(-2)}<br><br>No seu horário local.`
     }
 };
@@ -62,10 +64,18 @@ var lastN = {}
 var removeIfZero = (n, id) => {
     if(n < 0) {
         if(id == "Days"){
-            console.log(2);
-            document.getElementById(id).textContent = "Já foi lançado!"
+            document.getElementById(id).textContent = getTransl("launched")
             document.getElementById(id).style.display = "inline"
             document.getElementById(id+"2").style.display = "none"
+            document.getElementById(id).style.opacity = 1;
+
+            document.getElementById(id).className = "jumpAnim"
+
+            if(window.innerWidth < 897) {
+                document.getElementById(id).style.fontSize = "2rem";
+            } else {
+                document.getElementById(id).style.fontSize = "4.2rem";
+            }
             return
         }
         document.getElementById(id).style.display = document.getElementById(id+"2").style.display = "none"
