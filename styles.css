@@ -60,6 +60,11 @@ body {
     top: 0px;
     animation: jump .55s;
 }
+.jumpLaunchAnim {
+    position: relative;
+    top: 0px;
+    animation: jump 2s;
+}
 
 @keyframes jump {
     0%   {
@@ -79,6 +84,31 @@ body {
     }
     100% {
         top: 0;
+    }
+}
+
+@keyframes jumpLaunch {
+    0%   {
+        top: 0;
+        filter: blur(5px);
+    }
+    5%  {
+        top: -.2rem;
+    }
+    50%  {
+        top: .7rem;
+        filter: blur(2px);
+    }
+    75% {
+        filter: blur(5px);
+    }
+    80% {
+        top: 0;
+        filter: blur(2px);
+    }
+    100% {
+        top: 0;
+        filter: blur(0);
     }
 }
 

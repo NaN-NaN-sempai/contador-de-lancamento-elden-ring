@@ -64,17 +64,18 @@ var lastN = {}
 var removeIfZero = (n, id) => {
     if(n < 0) {
         if(id == "Days"){
+            document.getElementById(id).style.fontSize = 0
             document.getElementById(id).textContent = getTransl("launched")
             document.getElementById(id).style.display = "inline"
             document.getElementById(id+"2").style.display = "none"
             document.getElementById(id).style.opacity = 1;
 
-            document.getElementById(id).className = "jumpAnim"
+            document.getElementById(id).className = "jumpLaunchAnim"
 
             if(window.innerWidth < 897) {
-                document.getElementById(id).style.fontSize = "2rem";
+                document.getElementById(id).style.fontSize = "3.5rem";
             } else {
-                document.getElementById(id).style.fontSize = "4.2rem";
+                document.getElementById(id).style.fontSize = "5.5rem";
             }
             return
         }
